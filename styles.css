@@ -143,9 +143,7 @@ section .wave.wave4{
     height: 100vh;
 }
 .circle{
-    display: flex;
-    top: 0;
-    left: 0;
+    position: fixed;
 }
 .circle-span{
     
@@ -175,4 +173,27 @@ section .wave.wave4{
         opacity: 0.1;
         
     }
+}
+
+.plane-div1{
+    
+    width: 100%;
+    height: 100vh;
+    z-index: 1200;
+}
+
+.plane-div1 .plane{
+    display: inline-block;
+    height: 100px;
+    width: 100px;
+    z-index: 800;
+    animation: animate5 4s ease-in-out infinite;
+}
+
+@keyframes animate5{
+
+    from {
+        transform: translateX(-1200px);
+    }
+    to {transform: translateX(1200px);}
 }
