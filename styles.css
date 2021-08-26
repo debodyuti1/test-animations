@@ -6,12 +6,28 @@
 
 }
 
+body{
+    background: linear-gradient(45deg,#0273da,#707cff,#737cff,#2f95ff,#00bbcd,#00d4ff);
+    background-size: 600% 100%;
+    animation: gradient 16s linear infinite;
+    animation-direction: alternate;
+}
+
+@keyframes gradient{
+    0%{
+        background-position: 0%;
+    }
+    100%{
+        background-position: 100%;
+    }
+}
+
 section{
     
     position: relative;
     width: 100%;
     height: 100vh;
-    background: #3586ff ;
+    background: transparent ;
     overflow: hidden;
     
 }
@@ -75,7 +91,7 @@ section .wave.wave4{
 }
 
 .content{
-    display: flex;
+    display:flex;
     justify-content: center;
     align-items: center;
     width: 100%;
@@ -84,7 +100,8 @@ section .wave.wave4{
 }
 
 .content-inner{
-    position: relative;
+    position: fixed;
+    z-index: 1110;
 }
 
 .content-inner h2{
@@ -101,7 +118,11 @@ section .wave.wave4{
     color: #ffffff;
     animation: animate 3s ease-in-out infinite;
     opacity: 0.4;
-   
+ 
+}
+
+.content-inner:hover{
+    filter: drop-shadow(0 0 0.75rem rgb(32, 222, 255));
     
 }
 
@@ -117,8 +138,17 @@ section .wave.wave4{
     }
 }
 
-.circle-span{
+.content-circle{
+    width: 100%;
+    height: 100vh;
+}
+.circle{
+    display: flex;
     top: 0;
+    left: 0;
+}
+.circle-span{
+    
     height: 25px;
     width: 25px;
     background-color: #ffffff;
@@ -126,20 +156,23 @@ section .wave.wave4{
     border-radius: 50%;
     display: inline-block;
     z-index: 800;
-    animation: animate4 7s ease-in-out infinite;
+    animation: animate4 10s ease-in-out infinite;
 }
 
 @keyframes animate4{
 
     0%,100%{
-        height: 25px;
-        width: 25px;
+        height: 10px;
+        width: 10px;
+        opacity: 0.2;
+        transform: translateX(10%,10%);
         
     }
     50%{
         
-        height: 700px;
-        width: 700px;
+        height: 600px;
+        width: 600px;
+        opacity: 0.1;
         
     }
 }
